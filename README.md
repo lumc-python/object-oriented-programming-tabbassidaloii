@@ -18,8 +18,10 @@ The file `test_fraction.py` can be edited and used to test the created class.
 
 7. Can we improve our arithmetic functions with our newly created simplification method?
 
-8. How would you deal with negative fractions?
+8. Add some comparison operators, e.g., `==` and `<`.
 
-9. Can you add integer multiplication functionality, e.g., `print Fraction(1, 2) * 2` should yield `2/2`.
+9. How would you deal with negative fractions?
 
-10. How can we prevent things like: `Fraction(0.4, 0.2)`?
+10. Can you add integer multiplication functionality, e.g., `print Fraction(1, 2) * 2` should yield `2/2`.
+
+11. How can we prevent things like: `Fraction(0.4, 0.2)`?
