@@ -63,7 +63,7 @@ class Fraction( object ):
         """
         6. Result of dividing two fractions.
         """
-        return Fraction(self * other.invert()).simplify() 
+        return Fraction(other.invert().__mul__(self))
 
     def simplify(self):
         """                                                                                                                                                    
@@ -77,8 +77,7 @@ class Fraction( object ):
         """
         8. Compare two fraction.
         """
-        x = self.simplify()
-        other = other.simplify()
+        self, other = self.simplify(), other.simplify()
         S = self._numerator * other._denominator
         O = self._denominator * other._numerator
         if S>O:
