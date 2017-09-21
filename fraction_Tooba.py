@@ -1,4 +1,12 @@
-# coding: utf-8
+from __future__ import division
+def gcd(a, b):
+    """
+    Calculate the greatest common divisor.
+    """
+    while b:
+        a, b = b, a%b
+    return a
+
 class Fraction(object):
     """
     A simple fraction class.
@@ -14,7 +22,7 @@ class Fraction(object):
         """
         1. Print the fraction.
         """
-        return '< ' + str(self._numerator) + '/' + str(self._denominator) + ' >'
+        return str(self._numerator) + '/' + str(self._denominator)
       
     def __add__(self, other):
         """
@@ -67,13 +75,6 @@ class Fraction(object):
         new_numerator = ( self._numerator * o_numerator)
         new_denominator = ( self._denominator * o_denominator )
         return Fraction(new_numerator,new_denominator).simplify() 
-    def gcd(a, b):
-        """
-        7. Calculate the greatest common divisor.
-        """
-        while b:
-            a, b = b, a%b
-        return a
 
     def simplify(self):
         """                                                                                                                                                    
@@ -87,15 +88,17 @@ class Fraction(object):
         """
         8. Compare two fraction.
         """
+        x = self.simplify()
+        other = other.simplify()
         S = self._numerator * other._denominator
         O = self._denominator * other._numerator
         if S>O:
-            return Fraction(self._numerator,self._denominator) + '>' + Fraction(other._numerator,other._denominator)
+            print self , '>' , other
         elif S==O:
-            return Fraction(self._numerator,self._denominator) + '==' + Fraction(other._numerator,other._denominator)
+            print self , '==' , other
         else:
-            return Fraction(self._numerator,self._denominator) + '<' + Fraction(other._numerator,other._denominator)
-        
+            print self , '<' , other
+        return ""
 
 
 
